@@ -48,8 +48,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1" width="1280" height="720"/>
-        <image name="2" width="720" height="1440"/>
+        <image name="1" width="1440" height="2560"/>
+        <image name="2" width="1440" height="2560"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
