@@ -14,12 +14,14 @@ class RezultViewController: UIViewController {
     
     @IBOutlet weak var labelImage: UILabel!
     
-    var dex: String!
+    var winerPoster: String!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //rezultImage.image = UIImage(named: dex)
-        labelImage.text = dex
+        rezultImage.image = UIImage(named: winerPoster)
+        
+        labelImage.text = "Судя по вашему выбору, рекомендуем посмотреть - \(String (winerPoster ?? "Error"))"
     }
     
 

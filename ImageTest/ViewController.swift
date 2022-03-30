@@ -59,8 +59,8 @@ class ViewController: UIViewController {
                 }
             } else {
                 print("Stop")
-                let dex = String(currentImageViewUp)
-                performSegue(withIdentifier: "rezultView", sender: dex)
+                let winerPoster = recommendationPosters[String(currentImageViewUp)]
+                performSegue(withIdentifier: "rezultView", sender: winerPoster)
             }
         }
     }
@@ -76,15 +76,15 @@ class ViewController: UIViewController {
                 }
             } else {
                 print("Stop")
-                let dex = String(currentImageViewDown)
-                performSegue(withIdentifier: "rezultView", sender: dex)
+                let winerPoster = recommendationPosters[String(currentImageViewDown)]
+                performSegue(withIdentifier: "rezultView", sender: winerPoster)
             }
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let rezultView = segue.destination as? RezultViewController else { return }
-        rezultView.dex = sender as? String
+        rezultView.winerPoster = sender as? String
         
         
     }
