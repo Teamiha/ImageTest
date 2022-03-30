@@ -13,30 +13,35 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageViewDown: UIImageView!
     
-    var image = [UIImage(named: "1"), UIImage(named: "2"), UIImage(named: "3"),
-                 UIImage(named: "4"), UIImage(named: "5"), UIImage(named: "6"),
-                 UIImage(named: "7"), UIImage(named: "8"), UIImage(named: "9"),
-                 UIImage(named: "10")
-                ]
+    var posters = [UIImage(named: "0"), UIImage(named: "1"), UIImage(named: "2"),
+                  UIImage(named: "3"), UIImage(named: "4"), UIImage(named: "5"),
+                  UIImage(named: "6"), UIImage(named: "7"), UIImage(named: "8"),
+                  UIImage(named: "9")
+                  ]
     
-    var testImage: [String: String] =
+    var recommendationPosters: [String: String] =
                    ["1": "The Machinist", "2": "Mortal Engines",
                     "3": "The Sorcerer's Apprentice", "4": "Tenet",
                     "5": "Kick Ass", "6": "Peacemaker",
                     "7": "Vikings", "8": "Brightburn",
-                    "9": "Reacher", "10": "Disenchantment",
-                   
+                    "9": "Reacher", "0": "Disenchantment",
                    ]
     
     
     
     var imageSelector = 2
+    var currentImageViewUp = 0
+    var currentImageViewDown = 1
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageViewUp.image = UIImage(named: testImage["1"] ?? "Error")
+        //imageViewUp.image = UIImage(named: recommendationPosters[String(currentImageViewDown)] ?? "Error")
+     
+        let test = imageViewDown.image?.description
         
+        print(test ?? "ERROR")
         
         
         
@@ -54,9 +59,9 @@ class ViewController: UIViewController {
     
     @objc func imageTappedUp(gesture: UIGestureRecognizer) {
         if (gesture.view as? UIImageView) != nil {
-            if imageSelector <= image.count - 1 {
-                for _ in image {
-                    imageViewDown.image = image[imageSelector]
+            if imageSelector <= posters.count - 1 {
+                for _ in posters {
+                    imageViewDown.image = posters[imageSelector]
                     imageSelector += 1
                     break
                 }
@@ -68,9 +73,9 @@ class ViewController: UIViewController {
     
     @objc func imageTappedDown(gesture: UIGestureRecognizer) {
         if (gesture.view as? UIImageView) != nil {
-            if imageSelector <= image.count - 1 {
-                for _ in image {
-                    imageViewUp.image = image[imageSelector]
+            if imageSelector <= posters.count - 1 {
+                for _ in posters {
+                    imageViewUp.image = posters[imageSelector]
                     imageSelector += 1
                     break
                 }
