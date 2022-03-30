@@ -51,7 +51,7 @@
         <scene sceneID="iJ4-ew-cGh">
             <objects>
                 <viewController id="ZaT-KN-lwE" userLabel="Rezult View Controller" customClass="RezultViewController" customModule="ImageTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wq0-85-pUV" customClass="rezu">
+                    <view key="view" contentMode="scaleToFill" id="wq0-85-pUV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

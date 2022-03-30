@@ -16,19 +16,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageViewDown: UIImageView!
     
     var posters = [UIImage(named: "0"), UIImage(named: "1"), UIImage(named: "2"),
-                  UIImage(named: "3"), UIImage(named: "4"), UIImage(named: "5"),
-                  UIImage(named: "6"), UIImage(named: "7"), UIImage(named: "8"),
-                  UIImage(named: "9")
-                  ]
+                   UIImage(named: "3"), UIImage(named: "4"), UIImage(named: "5"),
+                   UIImage(named: "6"), UIImage(named: "7"), UIImage(named: "8"),
+                   UIImage(named: "9")
+    ]
     
     var recommendationPosters: [String: String] =
-                   ["1": "The Machinist", "2": "Mortal Engines",
-                    "3": "The Sorcerer's Apprentice", "4": "Tenet",
-                    "5": "Kick Ass", "6": "Peacemaker",
-                    "7": "Vikings", "8": "Brightburn",
-                    "9": "Reacher", "0": "Disenchantment",
-                   ]
-    
+    ["1": "The Machinist", "2": "Mortal Engines",
+     "3": "The Sorcerer's Apprentice", "4": "Tenet",
+     "5": "Kick Ass", "6": "Peacemaker",
+     "7": "Vikings", "8": "Brightburn",
+     "9": "Reacher", "0": "Disenchantment",
+    ]
     
     
     var imageSelector = 2
@@ -58,7 +57,6 @@ class ViewController: UIViewController {
                     break
                 }
             } else {
-                print("Stop")
                 let winerPoster = recommendationPosters[String(currentImageViewUp)]
                 performSegue(withIdentifier: "rezultView", sender: winerPoster)
             }
@@ -75,7 +73,6 @@ class ViewController: UIViewController {
                     break
                 }
             } else {
-                print("Stop")
                 let winerPoster = recommendationPosters[String(currentImageViewDown)]
                 performSegue(withIdentifier: "rezultView", sender: winerPoster)
             }
@@ -86,10 +83,7 @@ class ViewController: UIViewController {
         guard let rezultView = segue.destination as? RezultViewController else { return }
         rezultView.winerPoster = sender as? String
         
-        
     }
-    
-    
 }
 
 
