@@ -4,6 +4,8 @@
 //
 //  Created by Михаил Светлов on 28.03.2022.
 //
+//Q: Как доставать название текущей картинки?
+//
 
 import UIKit
 
@@ -37,17 +39,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //imageViewUp.image = UIImage(named: recommendationPosters[String(currentImageViewDown)] ?? "Error")
-     
-        let test = imageViewDown.image?.description
-        
-        print(test ?? "ERROR")
-        
-        
-        
-        
-        
-        
         let tapGestureUp = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTappedUp(gesture:)))
         let tapGestureDown = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTappedDown(gesture:)))
         
@@ -62,10 +53,12 @@ class ViewController: UIViewController {
             if imageSelector <= posters.count - 1 {
                 for _ in posters {
                     imageViewDown.image = posters[imageSelector]
+                    currentImageViewDown = imageSelector
                     imageSelector += 1
                     break
                 }
             } else {
+                print(currentImageViewUp)
                 print("Stop")
             }
         }
@@ -76,10 +69,12 @@ class ViewController: UIViewController {
             if imageSelector <= posters.count - 1 {
                 for _ in posters {
                     imageViewUp.image = posters[imageSelector]
+                    currentImageViewUp = imageSelector
                     imageSelector += 1
                     break
                 }
             } else {
+                print(currentImageViewDown)
                 print("Stop")
             }
         }
