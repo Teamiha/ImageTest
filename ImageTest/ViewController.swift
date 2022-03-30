@@ -58,8 +58,9 @@ class ViewController: UIViewController {
                     break
                 }
             } else {
-                print(currentImageViewUp)
                 print("Stop")
+                let dex = String(currentImageViewUp)
+                performSegue(withIdentifier: "rezultView", sender: dex)
             }
         }
     }
@@ -74,11 +75,20 @@ class ViewController: UIViewController {
                     break
                 }
             } else {
-                print(currentImageViewDown)
                 print("Stop")
+                let dex = String(currentImageViewDown)
+                performSegue(withIdentifier: "rezultView", sender: dex)
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let rezultView = segue.destination as? RezultViewController else { return }
+        rezultView.dex = sender as? String
+        
+        
+    }
+    
     
 }
 

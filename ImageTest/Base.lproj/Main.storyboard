@@ -40,16 +40,59 @@
                     <connections>
                         <outlet property="imageViewDown" destination="Xhm-eu-EXO" id="lxM-EK-ka9"/>
                         <outlet property="imageViewUp" destination="Khn-5s-Ca6" id="qrc-eu-N0o"/>
+                        <segue destination="ZaT-KN-lwE" kind="presentation" identifier="rezultView" modalPresentationStyle="fullScreen" id="mW5-P9-yWa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="65.625"/>
         </scene>
+        <!--Rezult View Controller-->
+        <scene sceneID="iJ4-ew-cGh">
+            <objects>
+                <viewController id="ZaT-KN-lwE" userLabel="Rezult View Controller" customClass="RezultViewController" customModule="ImageTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wq0-85-pUV" customClass="rezu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="kz4-bJ-Wvj">
+                                <rect key="frame" x="20" y="64" width="374" height="772"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Error" translatesAutoresizingMaskIntoConstraints="NO" id="KHQ-Hv-0VQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="372.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYA-wG-HtN">
+                                        <rect key="frame" x="0.0" y="399.5" width="374" height="372.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DXt-9e-Pll"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="kz4-bJ-Wvj" secondAttribute="bottom" constant="60" id="7ka-0D-E4x"/>
+                            <constraint firstItem="kz4-bJ-Wvj" firstAttribute="top" secondItem="DXt-9e-Pll" secondAttribute="top" constant="20" id="N5G-E4-9J0"/>
+                            <constraint firstItem="kz4-bJ-Wvj" firstAttribute="leading" secondItem="DXt-9e-Pll" secondAttribute="leading" constant="20" id="aTW-tu-Y9z"/>
+                            <constraint firstAttribute="trailing" secondItem="kz4-bJ-Wvj" secondAttribute="trailing" constant="20" id="vQe-qz-dxR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="labelImage" destination="dYA-wG-HtN" id="9OG-Tg-f0w"/>
+                        <outlet property="rezultImage" destination="KHQ-Hv-0VQ" id="Xga-KJ-Vb8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T0i-Ae-j8j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="891" y="66"/>
+        </scene>
     </scenes>
     <resources>
         <image name="0" width="1440" height="2560"/>
         <image name="1" width="1440" height="2560"/>
+        <image name="Error" width="1440" height="2560"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
